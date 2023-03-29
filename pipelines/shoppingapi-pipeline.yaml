@@ -69,6 +69,7 @@ stages:
           - task: KubernetesManifest@0
             displayName: Create imagePullSecret
             inputs:
+              kubernetesServiceConnection: $(kubernetesServiceConnection)
               action: createSecret
               secretName: $(imagePullSecret)
               dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
