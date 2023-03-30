@@ -21,14 +21,13 @@ variables:
   kubernetesServiceConnection: 'cb689e8b-9a00-465f-9fed-399f745f74c3'
   imageRepository: 'shoppingclient'
   containerRegistry: 'shoppingacr69.azurecr.io'
-  dockerfilePath: 'Shopping/Shopping.API/Dockerfile'
+  dockerfilePath: 'Shopping/Shopping.Client/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'acr-secret'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
   
-
 stages:
 - stage: Build
   displayName: Build stage
