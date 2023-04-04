@@ -26,7 +26,7 @@ namespace Shopping.API.Controllers
         public async Task<IEnumerable<Product>> Get()
         {
             var list = await _context.Products.Find(p => true).ToListAsync();
-            list.ForEach(e => e.Description += " M1");
+            list.ForEach(e => e.Description += " M2");
             return list;
         }
 
