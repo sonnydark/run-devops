@@ -37,16 +37,27 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - task: Docker@2
-      displayName: Build and push an image to container registry
+      displayName: Build and push an API image to container registry
       inputs:
         command: buildAndPush
-        repository: $(imageRepository)
-        dockerfile: $(dockerfilePath)
+        repository: 'shoppingapi'
+        dockerfile: 'Shopping/Shopping.API/Dockerfile'
         containerRegistry: $(dockerRegistryServiceConnection)
         buildContext: $(Build.SourcesDirectory)/Shopping
         tags: |
           $(tag)
-          
+
+    - task: Docker@2
+      displayName: Build and push an Client image to container registry
+      inputs:
+        command: buildAndPush
+        repository: 'shoppingclient'
+        dockerfile: 'Shopping/Shopping.Client/Dockerfile'
+        containerRegistry: $(dockerRegistryServiceConnection)
+        buildContext: $(Build.SourcesDirectory)/Shopping
+        tags: |
+          $(tag)
+
     - upload: helm
       artifact: helm
 
