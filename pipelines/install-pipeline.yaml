@@ -68,11 +68,7 @@ stages:
             inputs:
               connectionType: 'Kubernetes Service Connection'
               kubernetesServiceConnection: $(kubernetesServiceConnection)
-
-              azureSubscriptionForACR: 'Free Trial' # string. Alias: azureSubscriptionEndpointForACR. Required. Azure subscription for Container Registry. 
-              azureResourceGroupForACR: 'myResourceGroup' # string. Required. Resource group. 
-              azureContainerRegistry: 'shoppingacr69.azurecr.io' # string. Required. Azure Container Registry. 
-
-              command: install
-              chartType: FilePath
+              command: 'install'
+              chartType: 'FilePath'
               chartPath: $(Build.SourcesDirectory)/helm/deploychart
+              releaseName: 'ShoppingAppRelease'
