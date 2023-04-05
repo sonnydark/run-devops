@@ -47,8 +47,8 @@ stages:
         tags: |
           $(tag)
           
-    - upload: aks
-      artifact: aks
+    - upload: helm
+      artifact: helm
 
 - stage: Deploy
   displayName: Deploy stage
@@ -70,5 +70,5 @@ stages:
               kubernetesServiceConnection: $(kubernetesServiceConnection)
               command: 'install'
               chartType: 'FilePath'
-              chartPath: $(Build.SourcesDirectory)/helm/deploychart
+              chartPath: $(Pipeline.Workspace)/helm/deploychart
               releaseName: 'ShoppingAppRelease'
