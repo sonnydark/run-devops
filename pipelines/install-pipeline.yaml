@@ -71,4 +71,4 @@ stages:
               command: 'install'
               chartType: 'FilePath'
               chartPath: $(Pipeline.Workspace)/helm/deploychart
-              releaseName: 'ShoppingAppRelease'
+              releaseName: 'shopping-app-release'
