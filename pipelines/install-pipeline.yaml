@@ -84,3 +84,4 @@ stages:
               chartType: 'FilePath'
               chartPath: $(Pipeline.Workspace)/helm/deploychart
               releaseName: 'shopping-app-release'
+              arguments: --set-string image.tag=$(tag)
