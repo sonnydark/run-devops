@@ -80,7 +80,7 @@ stages:
             inputs:
               connectionType: 'Kubernetes Service Connection'
               kubernetesServiceConnection: $(kubernetesServiceConnection)
-              command: 'install'
+              command: 'upgrade --install'
               chartType: 'FilePath'
               chartPath: $(Pipeline.Workspace)/helm/deploychart
               releaseName: 'shopping-app-release'
