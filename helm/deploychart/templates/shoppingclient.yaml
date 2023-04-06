@@ -5,7 +5,7 @@ metadata:
   labels:
     app: shoppingclient
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: shoppingclient
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: shoppingclient
-          image: shoppingacr69.azurecr.io/shoppingclient:latest
+          image: shoppingacr69.azurecr.io/shoppingclient:28
           imagePullPolicy: IfNotPresent          
           ports:
             - containerPort: 80
